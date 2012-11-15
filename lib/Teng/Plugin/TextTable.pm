@@ -2,7 +2,7 @@ package Teng::Plugin::TextTable;
 use strict;
 use warnings;
 use 5.010001;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 use Text::SimpleTable;
 use Carp ();
 use List::Util ();
@@ -53,6 +53,14 @@ Teng::Plugin::TextTable - Make text table from database.
     my $db = My::DB->new(...);
     print $db->draw_text_table('user', {id => { '>', 50 }});
 
+    # or, you want to use this plugin for just debugging...
+    # You can use without load to db class.
+    sub dump_table {
+        my $table_name = shift;
+        require Teng::Plugin::TextTable;
+        return c->db->Teng::Plugin::TextTable::draw_text_table($table_name);
+    }
+
 =head1 DESCRIPTION
 
 Teng::Plugin::TextTable is text table renderer plugin for L<Teng>.
@@ -62,6 +70,8 @@ Teng::Plugin::TextTable is text table renderer plugin for L<Teng>.
 Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>
 
 =head1 SEE ALSO
+
+L<Teng>
 
 =head1 LICENSE
 
