@@ -20,7 +20,7 @@ no_index:
 provides:
   Teng::Plugin::TextTable:
     file: lib/Teng/Plugin/TextTable.pm
-    version: 0.02
+    version: 0.03
 requires:
   List::Util: 0
   Teng: 0
@@ -28,4 +28,4 @@ requires:
   perl: 5.010001
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.02
+version: 0.03
